@@ -19,11 +19,24 @@ public class SplitCarName {
         List<String> carNames = new ArrayList<>();
 
         for (String name : names) {
+            validateCarName(name);
             carNames.add(name);
         }
 
         return carNames;
     }
 
-}
+    private void validateCarName(String name) {
+        if (name.contains(" ")) {
+            throw new IllegalArgumentException("자동차 이름에 공백이 포함될 수 없습니다.");
+        }
 
+        if (name.isEmpty()) {
+            throw new IllegalArgumentException("자동차 이름은 비어있을 수 없습니다.");
+        }
+
+        if (name.length() > MAX_NAME_LENGTH) {
+            throw new IllegalArgumentException("자동차 이름은 " + MAX_NAME_LENGTH + "자 이하만 가능합니다.");
+        }
+    }
+}
