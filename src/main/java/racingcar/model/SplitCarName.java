@@ -22,7 +22,8 @@ public class SplitCarName {
             validateCarName(name);
             carNames.add(name);
         }
-
+        validateDuplicateNames(carNames);
+        
         return carNames;
     }
 
@@ -37,6 +38,15 @@ public class SplitCarName {
 
         if (name.length() > MAX_NAME_LENGTH) {
             throw new IllegalArgumentException("자동차 이름은 " + MAX_NAME_LENGTH + "자 이하만 가능합니다.");
+        }
+    }
+
+    private void validateDuplicateNames(List<String> carNames) {
+        Set<String> uniqueNames = new HashSet<>();
+        for (String name : carNames) {
+            if (!uniqueNames.add(name)) {
+                throw new IllegalArgumentException("자동차 이름에 중복이 있습니다.");
+            }
         }
     }
 }
