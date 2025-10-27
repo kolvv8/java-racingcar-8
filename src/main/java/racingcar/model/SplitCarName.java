@@ -11,6 +11,10 @@ public class SplitCarName {
     private static final int MAX_NAME_LENGTH = 5;
 
     public List<String> parseCarNames(String input) {
+        if (input == null || input.trim().isEmpty()) {
+            throw new IllegalArgumentException("이름이 입력되지 않았습니다.");
+        }
+
         String[] names = input.split(DELIMITER, -1);
         List<String> carNames = new ArrayList<>();
 
