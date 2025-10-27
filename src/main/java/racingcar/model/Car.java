@@ -37,5 +37,9 @@ public class Car {
     public int getPosition() {
         return position;
     }
+
+    public boolean isAtPosition(int maxPosition) {
+        return this.position == maxPosition;
+    }
 }
 
