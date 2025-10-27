@@ -1,6 +1,7 @@
 package racingcar.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Racing {
@@ -28,6 +29,10 @@ public class Racing {
             statuses.add(car.getCurrentStatusString());
         }
         return statuses;
+    }
+
+    public List<Car> getCarList() {
+        return Collections.unmodifiableList(cars);
     }
 
 }
