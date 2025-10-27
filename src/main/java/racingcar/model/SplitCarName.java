@@ -59,6 +59,13 @@ public class SplitCarName {
             throw new IllegalArgumentException("시도 횟수는 자연수이어야 합니다.");
         }
 
+        validateTryCount(tryCount);
         return tryCount;
+    }
+
+    private void validateTryCount(int count) {
+        if (count < 1) {
+            throw new IllegalArgumentException("시도 횟수는 1 이상의 자연수여야 합니다.");
+        }
     }
 }
