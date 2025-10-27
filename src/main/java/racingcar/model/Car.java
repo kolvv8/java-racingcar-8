@@ -25,5 +25,17 @@ public class Car {
             positionString += "-";
         }
     }
+
+    public String getCurrentStatusString() {
+        return name + " : " + positionString;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPosition() {
+        return position;
+    }
 }
 
