@@ -23,7 +23,7 @@ public class SplitCarName {
             carNames.add(name);
         }
         validateDuplicateNames(carNames);
-        
+
         return carNames;
     }
 
@@ -48,5 +48,17 @@ public class SplitCarName {
                 throw new IllegalArgumentException("자동차 이름에 중복이 있습니다.");
             }
         }
+    }
+
+    public int parseTryCount(String input) {
+
+        int tryCount;
+        try {
+            tryCount = Integer.parseInt(input.trim());
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("시도 횟수는 자연수이어야 합니다.");
+        }
+
+        return tryCount;
     }
 }
